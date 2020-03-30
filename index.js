@@ -28,4 +28,11 @@ const reverseString = function(str) {
   return lastChar + reverseString(str.slice(0,-1))
 }
 
-console.log(reverseString('Hello'))
+const nthTriangularNumber = function(n) {
+  if (n === 1) {
+    return 1;
+  }
+  return n + nthTriangularNumber(n - 1);
+}
+
+console.log(nthTriangularNumber(3));
