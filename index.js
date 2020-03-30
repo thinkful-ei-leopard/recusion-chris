@@ -20,4 +20,12 @@ const powerCalculator = function(base, exponent) {
   powerCalculator(base = base * base, exponent - 1);
 };
 
-powerCalculator(10,0);
+const reverseString = function(str) {
+  if (str.length === 0) {
+    return ''
+  }
+  const lastChar = str.charAt(str.length - 1);
+  return lastChar + reverseString(str.slice(0,-1))
+}
+
+console.log(reverseString('Hello'))
