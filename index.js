@@ -46,4 +46,12 @@ const stringSplitter = function(str, separator = '/') {
   return [arrayElement, ...stringSplitter(str.slice(separatorIndex +1 ), separator)]
 };
 
-console.log(stringSplitter('02/20/2020', '/'))
+const binaryRep = function (input) {
+  if (input === 0){
+    return '';
+  }
+  let binaryNum = input % 2;
+  return binaryRep(Math.floor(input/2)) + binaryNum
+}
+
+console.log(binaryRep(25))
