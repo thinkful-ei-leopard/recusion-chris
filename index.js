@@ -22,17 +22,28 @@ const powerCalculator = function(base, exponent) {
 
 const reverseString = function(str) {
   if (str.length === 0) {
-    return ''
+    return '';
   }
   const lastChar = str.charAt(str.length - 1);
-  return lastChar + reverseString(str.slice(0,-1))
-}
+  return lastChar + reverseString(str.slice(0,-1));
+};
 
 const nthTriangularNumber = function(n) {
   if (n === 1) {
     return 1;
   }
   return n + nthTriangularNumber(n - 1);
-}
+};
 
-console.log(nthTriangularNumber(3));
+const stringSplitter = function(str, separator = '/') {
+  const separatorIndex = str.indexOf(separator);
+  const arrayElement = str.slice(0,separatorIndex);
+  
+  if (separatorIndex === -1) {
+    return [str];
+  }
+
+  return [arrayElement, ...stringSplitter(str.slice(separatorIndex +1 ), separator)]
+};
+
+console.log(stringSplitter('02/20/2020', '/'))
