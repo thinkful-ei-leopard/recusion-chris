@@ -46,6 +46,20 @@ const stringSplitter = function(str, separator = '/') {
   return [arrayElement, ...stringSplitter(str.slice(separatorIndex +1 ), separator)]
 };
 
+const fibonacci = function(term) {
+  if(term === 0) {
+    return 0
+  }
+
+  if(term === 1) {
+    return 1
+  }
+
+  return fibonacci(term - 1) + fibonacci(term - 2)
+}
+
+console.log(fibonacci(7))
+
 const binaryRep = function (input) {
   if (input === 0){
     return '';
@@ -53,5 +67,3 @@ const binaryRep = function (input) {
   let binaryNum = input % 2;
   return binaryRep(Math.floor(input/2)) + binaryNum
 }
-
-console.log(binaryRep(25))
